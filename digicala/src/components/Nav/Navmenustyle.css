@@ -1,0 +1,38 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
+    margin-top: 1.5rem;
+    margin-right: 10px;
+    margin-left: 30px;
+    font-size: 0.8rem;
+    color: #62666d;
+    
+    /* position: absolute;
+    right: 0; */
+}
+.store{
+    width: 18px;
+    height: 18px;
+    color: #62666d;
+}
+.percent{
+    height: 20px;
+}
+.cent{
+    height: 20px;
+}
+.sold{
+    height: 20px;
+}
+.dropdown{
+    display: none;
+}
+.show{
+    display: block;
+}

@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 .container{
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     display: flex;          
     align-items: center;
@@ -14,7 +14,10 @@
 .carousel{
     margin: 0 auto;         
     overflow: hidden;           
-    max-width: 1300px;
+    max-width: 1349px;
+    height: 23rem;
+    position: relative;
+    top: 10%;
   
 }
  .carousel-inner{
@@ -24,16 +27,18 @@
 .carousel-item{
     display: inline-block;
     width: 100%;
+    
 } 
 .carousel-control{
-    /* background-color: rgb(0, 0, 0.5);         
-    border: none; */
+    /* /* background-color: rgb(0, 0, 0.5);          */
+    border: none; 
     display: inline-block;          
     position: absolute;        
     height: 50px;
-    width: 70px;         
+    width: 50px;           
+    border-radius: 100%;       
     top: calc(50% - 25px);
-    color: aliceblue;         
+    /* color: aliceblue;          */
     cursor: pointer;
 } 
 .left{
