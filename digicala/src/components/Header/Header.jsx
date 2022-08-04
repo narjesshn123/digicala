@@ -44,7 +44,7 @@ export const Header = () => {
    
       </div>
       <div><Navbar/></div>
-      <div><Carousel/></div>
+     
      
     
     </div>

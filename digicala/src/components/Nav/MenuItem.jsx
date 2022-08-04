@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState, useRef } from 'react';
 import { Dropdown } from './Dropdown'
+import './Navmenustyle.css'
 
 const MenuItem = ({menu, depthLevel}) => {
   const[dropdown, setDropdown] = useState(false)
@@ -26,28 +27,33 @@ const MenuItem = ({menu, depthLevel}) => {
     }
   },[dropdown])
   return (
-    <li className="menu-items" ref= {ref}
+    <div className="menu-items" ref= {ref}
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
     >
     {menu.submenu ? (
      <>
-      <button aria-expanded={dropdown ? "true" : "false"} 
+      <a className='items' aria-expanded={dropdown ? "true" : "false"} 
       onClick = {()=>setDropdown((prev)=> !prev)}
     
       >
        {menu.tittle}
        {depthLevel>0 ?<span>&raquo;</span>:<span className='arrow'/>}
-      </button>
+      </a
+      >
+    
       <Dropdown submenus={menu.submenu} 
       dropdown={dropdown}
       depthLevel={depthLevel}
       />
+     
      </>
     ) : (
-     <a href="/#">{menu.tittle}</a>
+     <a href="/#">{menu.icon}{menu.tittle}</a>
+   
     )}
-   </li>
+     
+   </div>
   )};
 
 export default MenuItem

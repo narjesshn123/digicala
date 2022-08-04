@@ -1,0 +1,40 @@
+.banners{           
+    display: flex;      
+    flex-direction: row;
+    margin-top: 2rem;
+    direction: rtl;              
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.bannersItem{
+    display: flex;       
+    flex-direction: column;          
+    margin: auto; 
+    align-items: center; 
+    cursor: pointer;
+    border: none;         
+}
+
+.bannersItem img{
+    width: 4rem;
+    height: 4rem;
+}
+.description{
+    text-decoration: none;
+}
+.bannersCircle{
+   border-radius: 100%;
+   border: none; 
+   background-color: aquamarine;       
+   color: grey;      
+   width: 60px;
+   height: 60px;            
+   cursor: pointer;
+}
+.bannersother{
+display: flex;
+flex-direction: column;
+}
+.bannersother p{
+    margin: auto;
+}

@@ -1,20 +1,39 @@
-.navbar{
+.menus{
     display: flex;
     flex-direction: row;
     direction: rtl;
+    z-index: 2;
+    position: relative;
+   
 }
-.menu{
+.menu-items{
     display: flex;
     flex-direction: row;
-    direction: rtl;
+   
     margin-top: 1.5rem;
     margin-right: 10px;
     margin-left: 30px;
     font-size: 0.8rem;
     color: #62666d;
-    
+    z-index: 3;
+    cursor: pointer;
     /* position: absolute;
     right: 0; */
+}
+.menu-items a{
+    text-decoration: none;
+   
+
+}
+
+.items{
+    height: 1.5rem;
+}
+.image{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    right: 2rem;
 }
 .store{
     width: 18px;
