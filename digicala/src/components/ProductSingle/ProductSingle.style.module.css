@@ -1,0 +1,92 @@
+.productSingleLine{
+    display: flex;
+    flex-direction: row;        
+    direction: rtl;
+    margin: auto;       
+    align-items: center;
+    flex-wrap: wrap;       
+    margin-bottom: 4px;
+    margin-right: 2rem;
+    margin-top: 1rem;  
+}
+.productSingleLineRight{
+    direction: rtl;              
+    color: #a1a3a8;       
+    font-size: 0.8rem;
+    margin: auto;
+    flex-grow: 1;
+    min-width: 0;
+    display: block;
+    padding-right: 4px;
+    padding-left: 4px;
+    touch-action: pan-y;
+    transition-duration: 0ms;
+    transform: translate3d(0px 0px 0px);
+    width: 100%;
+    height: 100%;
+}
+.productSingleLineRight a{
+    width: auto;
+    height: auto;
+    line-height: 2.17;
+    flex-shrink: 0;
+
+}
+.productSingleLineLeft{
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    /* align-items: center; */
+    padding-right: 1rem;
+    margin-left: 2rem;
+}
+.productSingleLineLeft p{
+    color: #a1a3a8;       
+    font-size: 0.8rem;
+}
+.productSingleLeft{
+    display: flex;       
+    flex-direction: row;
+    direction: rtl;       
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+.productSingleLeft h3{
+    color: #dd305d;
+}
+.productSingleIcon span{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;        
+}
+.productSinglePic img{
+    cursor: crosshair;
+    width: 500px;
+    height: 500px;
+}
+.desceller{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: auto;
+}
+.productSingleCenter{
+    width: 60%;
+}
+.productSingleCeller{
+    border: 1px solid gray;
+    border-radius: 18px;
+    background-color: #d0d0d0;
+    width: 300px;
+}
+.celler{
+    display: flex;
+    flex-direction: row;
+    /* width: 40%; */
+}
+.basket{
+    background-color: #dd305d;       
+    border: none;
+    border-radius: 18px;
+    margin-right: 5rem;
+}
