@@ -4,7 +4,8 @@ import ProductSingleLine from './ProductSingleLine'
 import ProductSingleIcon from './ProductSingleIcon'
 import sharjer from '../../assets/image/sharjer.jpg'  
 import { FaStar, FaThumbsUp, FaInfo,  } from 'react-icons/fa'  
-import { BiCheck } from "react-icons/bi";  
+import { BiCheck } from "react-icons/bi"; 
+import { Link } from 'react-router-dom' 
 const ProductSingle = () => {
   return (
     <div>
@@ -51,7 +52,9 @@ const ProductSingle = () => {
         <p>بازرگانی مهرسام</p>
         <h5>83% رضایت کالا | عملکدد خیلی خوب </h5>           
         </div>
+        <Link to='/'>
         <button className={styles.basket}>افزودن به سبد</button>
+        </Link>
       </div>
       </div>
             </div>
