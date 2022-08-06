@@ -1,0 +1,94 @@
+.container {
+    margin-top: 2rem;
+    margin-left: 2.3rem;
+    border-radius: 16px;
+    padding-right: 2px;
+    padding-left: 2px;
+    direction: rtl;
+    background-color: #ef394e;
+    color: yellowgreen;
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    overflow-x: auto;
+}
+.container p{
+    width: 92px;
+height: 77px;
+font-size: 2rem;
+font-weight: bolder;
+color: aliceblue;
+margin: auto;
+justify-content: center;
+align-items: center;
+border-radius: 18px;
+
+}
+.container img{
+    margin-top: 3rem;
+    margin-right: 1rem;
+}
+.menu{
+    display: flex;         
+    flex-direction: column;
+    background-color: aliceblue;
+    margin: auto;
+  
+     
+}
+
+.menuItem{
+    background-color: #ef394e;
+    justify-content: center;
+    align-items: center;
+  
+}
+.menuItemAll{
+    background-color: white;
+    margin-top: 2rem;
+    margin-left: 2px;
+    width: 182px;
+    min-width: 182px;
+    max-width: 182px;
+    cursor: pointer;
+    
+    justify-content: center;
+    align-items: center;
+}
+.menuItemAll:hover{
+    box-shadow: 0 2px 17px 0 grey;
+}
+.menuItemAll img{
+    height: 9rem;
+}
+.itemPrice{
+    display: flex;       
+    flex-direction: row;        
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+.itemPrice h5{
+    padding-right: 2rem;
+    color: black;
+}
+.itemPrice h4{
+    border-radius: 1px solid #ef394e;
+    background-color: #ef394e;
+    border-radius: 5rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 40px;
+    height: 20px;
+}
+.itemPrev{
+    font-size: 0.9rem;
+    font-weight: 400;        
+    text-decoration: line-through;
+    color: #c0c2c5;
+    margin-right: 3.8rem;
+    margin-top: -0.5rem;
+}
+
+   
