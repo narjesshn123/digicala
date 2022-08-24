@@ -15,14 +15,14 @@ export const CategoryAmazing = () => {
            <div className={styles.menuItem}>
             <div className={styles.menuItemAll}>
              {amaz.pic}
-             <div>
+              <div>
                 <div className={styles.itemPrice}>
                     <h4>{amaz.percent}</h4>
                     <h5>{amaz.price}</h5>
                     </div>
                 <h6 className={styles.itemPrev}>{amaz.prev}</h6>
-             </div>
-             </div>
+              </div>
+              </div>
               </div>
           
             </div>

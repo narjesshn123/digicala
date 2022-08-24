@@ -1,16 +1,22 @@
 import React from 'react'
 import styles from './Category.style.module.css'
+import GroupCategory from './GroupCategory'
 import './Category.style.module.css'
 import { categoryother } from './categoryother'
 import {Link} from 'react-router-dom'
+import { useState, useEffect } from 'react'
 export const CategoryOtherItem = () => {
+
+ 
+
   return (
+    <div>
     <section>
  <div className={styles.banners}>
         {categoryother.map((otheritem, index) => (
               
      <a href='#' className={styles.bannersItem} key={index}>
-     <Link to='/productSingle/productId'>
+    
     
             {otheritem.pic}
            <div>
@@ -19,7 +25,7 @@ export const CategoryOtherItem = () => {
                 {otheritem.description}
                 </h5>
            </div>
-           </Link>
+         
         </a>
         
         ) 
@@ -34,5 +40,7 @@ export const CategoryOtherItem = () => {
         </a>
         </div>
     </section>
+
+    </div>
   )
 }

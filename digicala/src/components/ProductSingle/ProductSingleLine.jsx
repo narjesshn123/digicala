@@ -1,16 +1,14 @@
 import React from 'react'
 import styles from './ProductSingle.style.module.css'
-const ProductSingleLine = () => {
+const ProductSingleLine = ({Product}) => {
   return (
     <div>
          <section className={styles.productSingleLine}>
       <section>
                 <div className={styles.productSingleLineRight}>
-                <a>دیجی کالا  /  </a>
-                <a>  کالای دیجیتال  /  </a>
-                <a> لوازم جانبی کالای دیجیتال  /  </a>
-                <a>لوازم جانبی گوشی موبایل  /  </a>
-                <a>کالای دیجیتال  </a>
+                <a>digicala/  </a>
+                <a>  {Product.category} /  </a>
+                <a>{Product.tittle} </a>
                 </div>
           </section>
           <section className={styles.productSingleLineLeft}>

@@ -1,0 +1,38 @@
+.container{
+    height: 60px;
+    background-color: black;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    flex-direction: row;
+    background-color: black;
+    width: 30%;       
+    color: white;
+     z-index: 99999;
+  
+}
+.menu{
+    color: aliceblue;
+    text-decoration: none;           
+}
+
+.navmenu{
+    background-color: aqua;
+}
+.menu-items a{
+    text-decoration: none;
+   
+
+}
+
+
+.dropdown{
+    display: none;
+  
+}
+.show{
+    display: block;
+   
+}

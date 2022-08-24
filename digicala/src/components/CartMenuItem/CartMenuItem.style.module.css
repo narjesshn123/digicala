@@ -1,0 +1,29 @@
+.cartMenu_item{
+    display: flex;
+    cursor: pointer;
+}
+.cartMenuItem_image{
+    height: 75px;
+    width: 75px;          
+}
+.cartMenuItem_info{
+    flex-grow: 1;        
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;        
+    padding-right: 10px;         
+}
+.cartMenuItem_control{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.cartMenuItem_tittle{
+    font-size: large;
+    font-weight: 600;         
+}
+.cartMenuItem_description{
+    font-size: medium;
+    font-weight: 400; 
+    color: #444;                    
+}

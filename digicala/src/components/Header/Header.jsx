@@ -1,54 +1,57 @@
 import React from 'react'
-
-import './Headerstyle.css'
+import styles from './Header.style.module.css'
 import logo from '../../assets/image/logo.svg';
 import takhfif from '../../assets/image/takhfif.gif'
 import basket from '../../assets/image/basket.png'
 import search from '../../assets/image/search.png';   
 import { Carousel } from '../Carousel/Carousel';  
 import login from '../../assets/image/login.png';  
-import { Navbar } from '../Nav/Navbar';
+import { BiBasket, BiSearch } from 'react-icons/bi';
+import { CartMenu } from '../CartMenu/CartMenu';
+import { useState } from 'react';
                
 export const Header = () => {
+  const[show, setShow] = useState()
   return (
-   
-    <div style={{display:"flex", flexDirection: "column", flexSherink: 0, flexGrow: 1, }}>
-   
-      <div>
-        <img className='takhfif' src={takhfif}/>
-      </div>
-      <div className='search-logo'>
+   <>
+    <div className={styles.container_img}>
+        <img src={takhfif}/>
+ </div>
+      <div className={styles.wrapper}>
+      <div className={styles.right}>
+          
+          <span onMouseEnter={()=>setShow(true)} style={{position:"relative"}}>
+            <BiBasket style={{cursor: "pointer"}}/>
+            <span>1</span>
+          <CartMenu show={show} setShow={setShow}/>           
+          </span>
+          <span>register</span>
+          <span>sign in</span>
+          {/* <span style={{cursor: "pointer"}}><p>1</p></span> */}
 
-        <div className='search-logo-left'>
-        <img className='search-logo-basket' src={basket}/>           
-        <hr className='left-line'/>
-       <div className='search-login'>
-        <p>ثبت نام</p>
-        <hr style={{marginRight:"10px", marginTop:"10px"}} className='left-line'/>
-        <p>ورود</p>
-        <img className='login' src={login} />          
-       </div>
         </div>
-
-        <div className='search-logo-right'>
-        <input type={'search'} placeholder="جستجو" className='search-field' />
-        <button type='submit' className='search-button'>
-        <img className='icon' src={search} width={10}/>
-        </button> 
         
-        <img className='digicala' src={logo}/>
-
+        <div className={styles.center}>
+          <p>EVALS.</p>
+          </div>
+          <div className={styles.left}>
+          EN
+           <span>
+            <BiSearch/>
+           <input/>
+           </span> 
+      
         </div>
         
   
    
       </div>
-      <div><Navbar/></div>
+      
      
      
-    
-    </div>
+      </>
+
   
-    
+
   )
 }

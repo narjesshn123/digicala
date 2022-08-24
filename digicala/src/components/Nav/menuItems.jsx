@@ -3,37 +3,33 @@ import sold from '../../assets/image/sold.png'
 import store from '../../assets/image/store.png'
 import percent from '../../assets/image/percent.png'
 import cent from '../../assets/image/cent.png'
-import './Navmenustyle.css'
+import styles from './Navmenu.style.module.css'
 export const menuItems = [
-    {icon:<img className='image' src={menu}/>},
-    {tittle: "دسته بندی کالا ها ",
+  
+    {tittle: " dastebandi cala",
 
-    submenu:[{tittle:"کالای دیجیتال"},
+    submenu:[{tittle:"digital cala"},
 
-    {tittle:"کالای دیجیتال"},
-    {tittle:"کالای دیجیتال",
-submenu:[{tittle:"کالای دیجیتال"},
-{tittle:"کالای دیجیتال",
-submenu:[ {tittle:"کالای دیجیتال"},
-{tittle:"کالای دیجیتال"},
-{tittle:"کالای دیجیتال"}]},
-{tittle:"کالای دیجیتال"},]},
+    {tittle:"digital cala"},
+    {tittle: "digital cala",
+submenu:[{tittle:"digital cala"},
+{tittle:"digital cala",
+submenu:[ {tittle:"digital cala"},
+// {tittle:"digital cala"},
+{tittle:"digital cala"}]},
+{tittle:"digital cala"},]},
 
-    {tittle:"کالای دیجیتال"},
-    {tittle:"کالای دیجیتال"},
-    {tittle:"کالای دیجیتال"},
+    // {tittle:"digital cala"},
+    // {tittle:"digital cala"},
+    // {tittle:"digital cala"},
 
 ], 
 
 },
-{icon: <img className='image' src={store}/>},
-    {tittle: "سوپرمارکت "},
-    {icon: <img className='image' src={sold}/>},
-    {tittle: "پرفروش ترین ها"},
-    {icon: <img className='image' src={percent}/>},
-    {tittle: "تخفیف ها و پیشنهاد ها"},
-    {icon: <img className='image' src={cent}/>},
-    {tittle: "شگفت انگیزها"}
+
+    {tittle: "supermarket"},
+   
+    {tittle: "sales"},
 ]
 export const MenuTwoItems = [
     {tittle:"سوالی دارید؟"},

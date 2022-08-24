@@ -1,0 +1,36 @@
+.cartMenu{
+    width: 300px;
+    position: absolute;
+    background-color: white;
+    border-radius: 15px;          
+    box-shadow: 0 4px 12px 0 rgb(0, 0, 0 / 20%);
+}
+.cartNav{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}          
+ul{
+    padding: 0px;          
+    list-style: none;         
+}
+li{
+    padding: 15px;
+    border-top: 1px solid gray;
+}
+.cartMenu_order{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;          
+}
+.order_button{
+    padding: 10px 20px;          
+    background-color: red;          
+    color: white;           
+    border-radius: 15px;
+    text-decoration: unset;
+}
+.link{
+    text-decoration: none;
+    color: unset;
+}
