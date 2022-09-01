@@ -12,8 +12,7 @@ const total_count = useSelector((state) => state.cart.items.reduce((count, item)
 count + item.count, 0))
 const dispatch = useDispatch()
   return (
-    <div className={styles.Cart}>
-      lhnlknlknlknlkn
+    <div className={styles.Cart}>                      
       <div className={styles.Cart_Items}>
         {
          items.map(item => (
@@ -35,7 +34,8 @@ const dispatch = useDispatch()
         }
         
         </div>
-        <div>مبلغ قابل پرداخت :    {total_price}</div>
+        <div>تعداد محصولات: {total_count} محصول </div>
+        <div>مبلغ قابل پرداخت : {total_price}</div>
     </div>
   )
 }
