@@ -19,7 +19,7 @@ const dispatch = useDispatch()
          items.map(item => (
           <div key={item.id} className={styles.Cart_item}>
           <div className={styles.Cart_item_image}>
-            <img width={'100%'} src={item.src} alt="product"/>        
+            <img width={'100%'} src={item.pic} alt="product"/>        
             </div>
            <div className={styles.Cart_item_info}>
             <div>{item.tittle}</div>
@@ -35,6 +35,7 @@ const dispatch = useDispatch()
         }
         
         </div>
+        <div>مبلغ قابل پرداخت :    {total_price}</div>
     </div>
   )
 }
