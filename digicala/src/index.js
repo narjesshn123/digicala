@@ -5,14 +5,17 @@ import App from './App';
 // import 'bootstrap/dist/css/bootstrap.css';
 import reportWebVitals from './reportWebVitals';
 import { makeServer } from "./server"
-
+import store from './redux/store';
+import { Provider } from 'react-redux';                  
 if (process.env.NODE_ENV === "development") {
   makeServer({ environment: "development" })
 }          
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <App />
+    </Provider>             
   </React.StrictMode>
 );
 

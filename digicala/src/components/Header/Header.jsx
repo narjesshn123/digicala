@@ -9,9 +9,11 @@ import login from '../../assets/image/login.png';
 import { BiBasket, BiSearch } from 'react-icons/bi';
 import { CartMenu } from '../CartMenu/CartMenu';
 import { useState } from 'react';
-               
+ import { useSelector } from 'react-redux';              
 export const Header = () => {
   const[show, setShow] = useState()
+  const total_count = useSelector((state) => state.cart.items.reduce((count, item)=>
+count + item.count, 0))
   return (
    <>
     <div className={styles.container_img}>
@@ -22,7 +24,7 @@ export const Header = () => {
           
           <span onMouseEnter={()=>setShow(true)} style={{position:"relative"}}>
             <BiBasket style={{cursor: "pointer"}}/>
-            <span>1</span>
+            <span>{total_count}</span>
           <CartMenu show={show} setShow={setShow}/>           
           </span>
           <span>register</span>

@@ -9,12 +9,17 @@ import { BiCheck } from "react-icons/bi";
 import { Link } from 'react-router-dom' 
 import { useParams } from 'react-router-dom'
 import Categories from '../Category/Categories'
+import { useDispatch } from 'react-redux'
+import { addtoCart } from '../../redux/reducers/Cart.reducer'
 
 const ProductSingle = () => {
   // let id = Math.floor(Math.random()*10)
  
   let {id} = useParams()
-  
+  const dispatch = useDispatch(); 
+  const handleAddtoCart = (user) =>{
+    dispatch(addtoCart(user))
+  }           
   // const[user, setUser] = useState({})
   let [user, setUser] = useState({})
 
@@ -30,7 +35,7 @@ const ProductSingle = () => {
  
       
     
-      <div className={styles.productSingleLeft}>
+      <div className={styles.productSingleLeft} key={user.id}>
         <div className={styles.productSingleIcon}>
             <h3>user id:{id}</h3>
            <div><ProductSingleIcon/></div>
@@ -63,12 +68,11 @@ const ProductSingle = () => {
             <span>یک فروشنده دیگر</span>
         </div>
         <div className={styles.trade}>            
-       
+       {user.price}
         <h3>{user.name}</h3>          
-        </div>
-        <Link to='/'>
-        <button className={styles.basket}>افزودن به سبد</button>
-        </Link>
+        </div>             
+        <button onClick={(()=>handleAddtoCart(user))} className={styles.basket}>افزودن به سبد</button>
+     
       </div>
       </div>
             </div>
