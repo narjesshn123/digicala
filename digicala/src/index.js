@@ -5,8 +5,9 @@ import App from './App';
 // import 'bootstrap/dist/css/bootstrap.css';
 import reportWebVitals from './reportWebVitals';
 import { makeServer } from "./server"
-import store from './redux/store';
-import { Provider } from 'react-redux';                  
+import store, { persistor } from './redux/store';
+import { Provider } from 'react-redux';        
+import { PersistGate } from 'redux-persist/integration/react';                
 if (process.env.NODE_ENV === "development") {
   makeServer({ environment: "development" })
 }          
@@ -14,7 +15,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
     <App />
+    </PersistGate>
     </Provider>             
   </React.StrictMode>
 );

@@ -10,15 +10,22 @@ import GroupCategory from '../../components/CategoryOtherItem/GroupCategory';
 import ProposalProduct from '../../components/ProposalProduct/ProposalProduct';
 import { Navbar } from '../../components/Nav/Navbar';
 import Categories from '../../components/Category/Categories';
+import axios from 'axios';
+import { getProducts } from '../../api/Products.api';
 // import { useParams } from 'react-router-dom';
 export const Home = () => {
   // let {id} = useParams()
   const[users, setUsers]= useState([])
   useEffect(()=>{
-      fetch("/api/users")
-      .then(res=>res.json())
-      .then(data=>setUsers(data.users))
-      .then(data=>console.log(data.users))
+    getProducts().then(res => setUsers(res.data.users)).catch(e=>alert(e.status))
+    // axios.get('/api/users')
+    // .then(res=>setUsers(res.data.users))
+    // .catch(e=>{console.log(e)})
+
+    //   fetch("/api/users")
+    //   .then(res=>res.json())
+    //   .then(data=>setUsers(data.users))
+    //   .then(data=>console.log(data.users))
   },[])
   return (
  <section className='banners'>
