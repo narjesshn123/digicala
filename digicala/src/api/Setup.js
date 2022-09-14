@@ -10,7 +10,7 @@ instance.interceptors.request.use(
     function(config){
         const token = Auth.getAccessToken()
         if(token){
-            config.headers["x_headers"] = "token" + token
+            config.headers["Autorization"] = "token" + token
         }
         return config
     },

@@ -1,4 +1,5 @@
-import { createServer, Model } from "miragejs"
+import { createServer, Model, Response } from "miragejs"
+// import Schema from "miragejs/orm/schema"
 
 export function makeServer({ environment = "test" } = {}) {
   let server = createServer({
@@ -6,10 +7,12 @@ export function makeServer({ environment = "test" } = {}) {
 
     models: {
       user: Model,
-      category: Model
+      // category: Model
+      log: Model
     },
 
     seeds(server) {
+      server.create("log", { id: 1, username: "narjes", password: 12345})
       server.create("user", { id: 1, price:10, tittle:"user1", name: "1کالای دیجیتال", pic: "https://dkstatics-public.digikala.com/digikala-categories/41d9c93f460475bd5253a70faa0b689605b083bf_1656160881.png" },)
       server.create("user", { id: 2, price:10, tittle:"user2", name: "خودرو2", pic: "https://dkstatics-public.digikala.com/digikala-categories/29dcb8556749524af521e23f63c13efe62a0db4a_1656160904.png" },)
       server.create("user", { id: 3, price:10, tittle:"user3", name: "مدو پوشاک3", pic: "https://dkstatics-public.digikala.com/digikala-categories/5795b31a635f1e23df96a908c009f31744ede38f_1656160928.png" },)
@@ -36,6 +39,51 @@ export function makeServer({ environment = "test" } = {}) {
 
     routes() {
       this.namespace = "api"
+      this.post("/auth/register", (schema, request) => {
+        const data = JSON.parse(request.requestBody);
+        let log = schema.logs.create({
+          username: data.username,
+          password: data.password,
+        });
+        return log;
+      });
+     
+      this.post("/auth/login", (schema, request) => {
+        const user_data = JSON.parse(request.requestBody);
+        let log = schema.logs.findBy({
+          username: user_data.username,
+          password: user_data.password,
+        });
+        if (log) {
+          return {
+            accessToken: 1,
+            refreshToken: 2,
+          };
+        } else {
+          return new Response(
+            400,
+            { some: "header" },
+            { none_filed_error: ["user credential is failed"] }
+          );
+        }
+      });
+      this.post("/auth/refresh", (schema, request) => {
+        const data = JSON.parse(request.requestBody)
+        if(data.refreshToken ===2){
+          return{
+            accessToken: 1
+          }
+        }
+        else{
+          return new Response(
+          401, 
+          {some: "header"},
+          {name_filed_error: ["user credential is failed"]}
+          )
+        }
+      })
+
+    
 
       this.get("/users", (schema) => {
         return schema.users.all()
