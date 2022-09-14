@@ -10,6 +10,8 @@ import { BiBasket, BiSearch } from 'react-icons/bi';
 import { CartMenu } from '../CartMenu/CartMenu';
 import { useState } from 'react';
  import { useSelector } from 'react-redux';              
+import Auth from '../../api/localStorage';
+import { Link } from 'react-router-dom';
 export const Header = () => {
   const[show, setShow] = useState()
   const total_count = useSelector((state) => state.cart.items.reduce((count, item)=>
@@ -28,7 +30,11 @@ count + item.count, 0))
           <CartMenu show={show} setShow={setShow}/>           
           </span>
           <span>register</span>
+          <Link to={"/profile"}>
+          <span>profile</span>
+          </Link>
           <span>sign in</span>
+          <span onClick={()=>Auth.logout()} style={{cursor:"pointer"}} >log out</span>
           {/* <span style={{cursor: "pointer"}}><p>1</p></span> */}
 
         </div>
