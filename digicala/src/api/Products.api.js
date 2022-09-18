@@ -7,9 +7,27 @@ export const getProducts = ()=>{
             reject(e.response)
           })
     })
+}   
 
-
-    // return new Promise(resolve, reject)=>{
-    //     axios.get("/api/users")
-    // }
-}
+// export const getProduct = (id)=>{
+//   return new Promise((resolve, reject)=>{
+//         axios.get('/api/users/' + id)
+//         .then((res)=>{resolve(res)})
+//         .catch((e)=>{
+//           reject(e.response)
+//         })
+//   })
+// }
+// console.log(getProduct) 
+export const getProduct = (id) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`/api/users/${id}`)
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((e) => {
+        reject(e.response);
+      });
+  });
+};

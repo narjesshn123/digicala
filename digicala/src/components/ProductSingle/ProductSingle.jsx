@@ -11,33 +11,32 @@ import { useParams } from 'react-router-dom'
 import Categories from '../Category/Categories'
 import { useDispatch } from 'react-redux'
 import { addtoCart } from '../../redux/reducers/Cart.reducer'
+import WithSpinner from '../WithSpinner/WithSpinner'
+import { getProduct } from '../../api/Products.api'
 
-const ProductSingle = () => {
+const ProductSingle = ({user}) => {
   // let id = Math.floor(Math.random()*10)
  
-  let {id} = useParams()
+  // let {id} = useParams()
   const dispatch = useDispatch(); 
   const handleAddtoCart = (user) =>{
     dispatch(addtoCart(user))
+    // console.log(user+ "userrrrrrrrrrrrrr");
   }           
   // const[user, setUser] = useState({})
-  let [user, setUser] = useState({})
+  // let [user, setUser] = useState({})
 
-  useEffect(() => {
-    fetch('/api/users/' + id)
-      .then(res => { return res.json()})
-      .then((data) => {setUser(data.user)}) }, 
-       [id])
+  // useEffect(() => {
+  //   fetch('/api/users/' + id)
+  //     .then(res => { return res.json()})
+  //     .then((data) => {setUser(data.user)}) }, 
+  //      [id])
  
   return (
-    <div>
-    
- 
-      
-    
+    <div>            
       <div className={styles.productSingleLeft} key={user.id}>
         <div className={styles.productSingleIcon}>
-            <h3>user id:{id}</h3>
+            <h3>user </h3>
            <div><ProductSingleIcon/></div>
         </div>
         <div className={styles.productSinglePic}>
@@ -84,4 +83,4 @@ const ProductSingle = () => {
   )
 }
 
-export default ProductSingle
+export default WithSpinner(ProductSingle, getProduct)
