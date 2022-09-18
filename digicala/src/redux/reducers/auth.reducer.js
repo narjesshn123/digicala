@@ -17,11 +17,11 @@ export const CartSlice = createSlice({
       state.refreshToken = "";           
       state.isLogin = false;                         
     },              
-    setA: (state, action)=>{
-      
+    setAccess: (state, action)=>{
+      state.accessToken = action.payload.accessToken
     }, 
    
  }
 })
-export const {addtoCart, decrease, remove} = CartSlice.actions
+export const {login, logout, setAccess} = CartSlice.actions
 export default CartSlice.reducer

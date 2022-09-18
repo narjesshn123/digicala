@@ -1,5 +1,7 @@
 import React from 'react'
-
+import Auth from '../../api/localStorage'
+import WithAuth from '../PrivateRoute/PrivateRoute'
+const isLogin = Auth.checklogin()
 const Profile = () => {
   return (
     <div>
@@ -8,4 +10,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default WithAuth(Profile, isLogin) 

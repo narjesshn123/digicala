@@ -31,10 +31,7 @@ function App() {
         </React.Suspense>
         }>
           <Route index element={<Home/>}/>
-          <Route path="profile" element={ 
-          <ProfileRoute>
-          <Profile/>
-          </ProfileRoute>}/> 
+          <Route path="profile" element={<Profile/>}/> 
           <Route path='users/:id' element={<React.Suspense fallback={<>loading loading loading</>}>
           <ProductSingle />
           </React.Suspense>
@@ -50,13 +47,13 @@ function App() {
 }
 
 export default App;
-const ProfileRoute = ({children})=>{
-  if(Auth.checklogin()){
-    return <>{children}</>
-  }
-  else{
-    return(
-    <Navigate to={"/login"} replace={true}/>
-    )
-  }
-}
+// const ProfileRoute = ({children})=>{
+//   if(Auth.checklogin()){
+//     return <>{children}</>
+//   }
+//   else{
+//     return(
+//     <Navigate to={"/login"} replace={true}/>
+//     )
+//   }
+// }
