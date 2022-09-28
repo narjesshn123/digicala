@@ -1,7 +1,7 @@
 // import "bootstrap/dist/css/bootstrap.min.css"
 import React from 'react';
 import './App.css';
-
+import FormDisabledExample from './views/Login/Login.jsx';
 
 import { Login } from './views/Login/Login.jsx';
 // import MainLayout from './Layouts/MainLayout/MainLayout';
@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Routes>
-      <Route path="login" element={ <Login/> }/>      
+      <Route path="login" element={ <FormDisabledExample/> }/>      
            
 
         <Route path='/' element={<React.Suspense fallback={<>loading...</>}>
