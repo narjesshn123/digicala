@@ -33,16 +33,17 @@ export const Home = () => {
             <div>
             {/* <div><Navbar/></div> */}
             <UncontrolledExample/>
+            <section><GroupCategory/></section>  
+            <section>
+            <Categories users={users} id={users.id} />
+            </section>
+            {/* <section><ProposalProduct/></section>  */}
 {/*          
             <section><CategoryOtherItem/></section>
           
             <section><CategoryAmazing/></section>
            
-            <section><GroupCategory/></section>  
-            <section>
-            <Categories users={users} id={users.id} />
-            </section>
-            <section><ProposalProduct/></section>  
+            
 
           
                   
