@@ -12,54 +12,120 @@ import { useState } from 'react';
  import { useSelector } from 'react-redux';              
 import Auth from '../../api/localStorage';
 import { Link } from 'react-router-dom';
-export const Header = () => {
+// export const Header = () => {
+//   const[show, setShow] = useState()
+//   const total_count = useSelector((state) => state.cart.items.reduce((count, item)=>
+// count + item.count, 0))
+//   return (
+//    <>
+//     <div className={styles.container_img}>
+//         <img src={takhfif}/>
+//  </div>
+//       <div className={styles.wrapper}>
+//       <div className={styles.right}>
+          
+//           <span onMouseEnter={()=>setShow(true)} style={{position:"relative"}}>
+//             <BiBasket style={{cursor: "pointer"}}/>
+//             <span>{total_count}</span>
+//           <CartMenu show={show} setShow={setShow}/>           
+//           </span>
+//           <span>register</span>
+//           <Link to={"/profile"}>
+//           <span>profile</span>
+//           </Link>
+//           <span>sign in</span>
+//           <span onClick={()=>Auth.logout()} style={{cursor:"pointer"}} >log out</span>
+//           {/* <span style={{cursor: "pointer"}}><p>1</p></span> */}
+
+//         </div>
+        
+//         <div className={styles.center}>
+//           <p>EVALS.</p>
+//           </div>
+//           <div className={styles.left}>
+//           EN
+//            <span>
+//             <BiSearch/>
+//            <input/>
+//            </span> 
+      
+//         </div>
+        
+  
+   
+//       </div>
+     
+//       </>
+
+//   )
+// }
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+function Header() {
   const[show, setShow] = useState()
   const total_count = useSelector((state) => state.cart.items.reduce((count, item)=>
 count + item.count, 0))
   return (
-   <>
-    <div className={styles.container_img}>
-        <img src={takhfif}/>
- </div>
-      <div className={styles.wrapper}>
-      <div className={styles.right}>
-          
-          <span onMouseEnter={()=>setShow(true)} style={{position:"relative"}}>
+    <>
+    <Navbar bg="light" expand="lg">
+      <Container fluid="md">
+        <Navbar.Brand onMouseEnter={()=>setShow(true)} style={{position:"relative"}}>
             <BiBasket style={{cursor: "pointer"}}/>
             <span>{total_count}</span>
           <CartMenu show={show} setShow={setShow}/>           
-          </span>
-          <span>register</span>
-          <Link to={"/profile"}>
+       
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll>
+            <Navbar.Brand>  
+            <Link to={"/profile"}>
           <span>profile</span>
           </Link>
-          <span>sign in</span>
-          <span onClick={()=>Auth.logout()} style={{cursor:"pointer"}} >log out</span>
-          {/* <span style={{cursor: "pointer"}}><p>1</p></span> */}
+            </Navbar.Brand>
 
-        </div>
-        
-        <div className={styles.center}>
-          <p>EVALS.</p>
-          </div>
-          <div className={styles.left}>
-          EN
-           <span>
-            <BiSearch/>
-           <input/>
-           </span> 
-      
-        </div>
-        
-  
-   
-      </div>
-      
-     
-     
-      </>
-
-  
-
-  )
+            <Navbar.Brand onClick={()=>Auth.logout()} style={{cursor:"pointer"}} >log out
+            </Navbar.Brand>
+            <Navbar.Brand>
+            log in
+            </Navbar.Brand>
+            <NavDropdown title="Link" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action5">
+                Something else here
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="#" disabled>
+              Link
+            </Nav.Link>
+          </Nav>
+          <Form className="d-flex">
+            <Form.Control style={{width:'100%'}}
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    <hr />         
+    </>
+  );
 }
+
+export default Header;

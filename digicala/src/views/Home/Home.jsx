@@ -12,6 +12,7 @@ import { Navbar } from '../../components/Nav/Navbar';
 import Categories from '../../components/Category/Categories';
 import axios from 'axios';
 import { getProducts } from '../../api/Products.api';
+import UncontrolledExample from '../../components/Carousel/Carousel'
 // import { useParams } from 'react-router-dom';
 export const Home = () => {
   // let {id} = useParams()
@@ -28,11 +29,11 @@ export const Home = () => {
     //   .then(data=>console.log(data.users))
   },[])
   return (
- <section className='banners'>
+ 
             <div>
-            <div><Navbar/></div>
-            <section><Carousel/></section>
-         
+            {/* <div><Navbar/></div> */}
+            <UncontrolledExample/>
+{/*          
             <section><CategoryOtherItem/></section>
           
             <section><CategoryAmazing/></section>
@@ -45,9 +46,9 @@ export const Home = () => {
 
           
                   
-                <img src= {oil} width={1100}/>
+                <img src= {oil} width={1100}/> */}
             </div>
-        </section>
+       
 
   
   )
