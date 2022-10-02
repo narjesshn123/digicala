@@ -4,9 +4,9 @@ import styles from './Category.style.module.css'
 import {Card, Button, CardImg} from 'react-bootstrap'
 
 const CategoryItem = ({categories, id, pic}) => {
+
+
   return (
-
-
 
 <div > 
   

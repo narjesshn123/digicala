@@ -11,6 +11,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {FreeMode} from 'swiper'
 import 'swiper/css'
 import 'swiper/css/free-mode'
+import { CategoryContoll } from './CategoryContoll'
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
+
 const Categories = ({users, id}) => {
   // const {id} = useParams;
   // alert(userId)
@@ -18,18 +23,39 @@ const Categories = ({users, id}) => {
   return (
 
 <div className="container py-4 px-4 justify-content bg-light">
-<Swiper
+<Swiper navigation={true} modules={[Navigation]} className="mySwiper"
 freeMode={true}
 grabCursor={true}
-modules={[FreeMode]}
-className="mySwiper"
-slidesPerView={5}
-spaceBetween={30}
+// modules={[FreeMode]}
+// className="mySwiper"
+breakpoints={{
+  0: {
+    slidesPerView: 1,
+    spaceBetween: 10
+  },
+  480: {
+    slidesPerView: 2,
+    spaceBetween: 10
+  },
+  768: {
+    slidesPerView: 3,
+    spaceBetween: 15
+  },
+  1024: {
+    slidesPerView: 4,
+    spaceBetween: 15
+  },
+  1280: {
+    slidesPerView: 5,
+    spaceBetween: 20
+  },
+}}
 >           
 
       {users.map((categories) =>(
         <SwiperSlide>
-          <CategoryItem categories={categories} id={categories.id}/>
+          <CategoryItem categories={categories} id={categories.id} />
+     
           </SwiperSlide>
       ))}
 
