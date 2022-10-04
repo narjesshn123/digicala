@@ -23,12 +23,12 @@ export const Home = () => {
     getusers().then(res => setProducts(res.data.products))
     .then(res => console.log(res.data.products))
   
-    .catch(e=>alert(e.status))
+    .catch(e=>console.log(e.status))
   },[])
   useEffect(()=>{
     getProducts().then(res => setUsers(res.data.users))
   
-    .catch(e=>alert(e.status))
+    .catch(e=>console.log(e.status))
   },[])
   return (
  
@@ -39,9 +39,9 @@ export const Home = () => {
               <GroupCategory/>
             </section> 
             <section>
-              <CategoryAmazing products={products} />
+              <CategoryAmazing products={products} id={products.id} />
             </section> 
-            <section>
+            <section style={{marginTop:"5rem"}}>
               <Categories users={users} id={users.id} />
             </section>
             

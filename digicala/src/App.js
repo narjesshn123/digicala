@@ -9,6 +9,7 @@ import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 import { Home } from './views/Home/Home';          
 import Cart from './components/Cart/Cart';
 import Auth from './api/localStorage';
+import AmazingSingle from './views/AmazingSingle/AmazingSingle'
 import Profile from './components/Profile/Profile';
 const MainLayout = React.lazy(()=> import('./Layouts/MainLayout/MainLayout'))
 // const Login = React.lazy(()=> import('./views/Login/Login'))
@@ -34,9 +35,10 @@ function App() {
           <Route path="profile" element={<Profile/>}/> 
           <Route path='users/:id' element={<React.Suspense fallback={<>loading loading loading</>}>
           <ProductSingle />
-          </React.Suspense>
-          
-          }/>
+          </React.Suspense> }/>
+          <Route path='products/:id' element={<React.Suspense fallback={<>loading loading loading</>}>
+            <AmazingSingle/>
+            </React.Suspense>}/>
         <Route path='/cart' element={<Cart/>}/> 
         </Route>
       </Routes>

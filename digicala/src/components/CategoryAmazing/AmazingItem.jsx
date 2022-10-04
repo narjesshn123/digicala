@@ -3,27 +3,30 @@ import { Link } from 'react-router-dom'
 import styles from '../Category/Category.style.module.css'
 import {Card, Button, CardImg} from 'react-bootstrap'
 
-const AmazingItem = ({products}) => {
+const AmazingItem = ({product, pic, id}) => {
 
 
   return (
-
+<>
 <div > 
   
        <Card className='p-0 overflow-hidden h-100 shadow'>
-       {/* <Link to={"/users/" +id} pic={pic}> */}
+       <Link to={"/products/" +id} pic={pic}>
         <div className='overflow-hidden rounded p-0 bg-light'>
-            <Card.Img variant='top' src={products.pic}/>
+            <Card.Img variant='top' src={product.pic}/>
         </div>
         <Card.Body className='text-center'>
-            <Card.Title className={styles.font}>{products.name}</Card.Title>
-            <Card.Title  className={styles.font}>{products.tittle}</Card.Title>
+            <Card.Title className={styles.font}>{product.name}</Card.Title>
+            <Card.Title  className={styles.font}>{product.tittle}</Card.Title>
         </Card.Body>
         {/* <Button className='w-100 rounded-0' variant='success'>show now</Button> */}
-        {/* </Link> */}
-        </Card> 
+        </Link>
+        </Card>
+        
     </div>
 
+
+</>
 
   )
 }

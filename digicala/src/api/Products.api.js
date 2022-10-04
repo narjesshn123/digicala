@@ -42,3 +42,16 @@ export const getProduct = (id) => {
       });
   });
 };
+
+export const getuser = (id) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`/api/products/${id}`)
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((e) => {
+        reject(e.response);
+      });
+  });
+};

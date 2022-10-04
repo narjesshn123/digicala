@@ -107,6 +107,11 @@ export function makeServer({ environment = "test" } = {}) {
       this.get("/products", (schema)=>{
         return schema.products.all()
       })
+      this.get("/products/:id", (schema, request)=>{
+        let id = request.params.id
+
+        return schema.products.find(id)
+      })
     },
   })
 

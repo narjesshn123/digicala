@@ -8,12 +8,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import AmazingItem from './AmazingItem'
-export const CategoryAmazing = ({products}) => {
+export const CategoryAmazing = ({products, id}) => {
  
   return (
 
-<div className="container py-4 px-4 justify-content" style={{backgroundColor:"white"}}>
-<h2>Official brand stores in Grocery</h2>
+<div className="container py-4 px-4 justify-content" style={{backgroundColor:'#ef4056', borderRadius:"16px"}}>
+<h2 style={{color:"white"}}>Amazing Product </h2>
+
 <Swiper navigation={true} modules={[Navigation]} className="mySwiper"
 freeMode={true}
 grabCursor={true}
@@ -43,17 +44,22 @@ breakpoints={{
 }}
 >     
      
-{/* {console.log(products)} */}
-<div className="container mx-auto">
-            {products.map(d => (
-                <h1>{d.name}</h1>
-            ))}
-            
-        </div>
+
+      {products.map((product) =>(
+        <SwiperSlide>
+          <AmazingItem product={product} id={product.id} />
+     
+          </SwiperSlide>
+      ))}
 
    
 
-</Swiper> 
+</Swiper>     
+    
+
+   
+
+ 
 </div>
   )
 }

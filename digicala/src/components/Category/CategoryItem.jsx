@@ -10,11 +10,11 @@ const CategoryItem = ({categories, id, pic}) => {
 
 <div > 
   
-       <Card className='p-0 overflow-hidden h-100 shadow'>
+       <Card className='p-0 overflow-hidden h-100' style={{border:"none"}}>
        <Link to={"/users/" +id} pic={pic}>
-        <div className='overflow-hidden rounded p-0 bg-light'>
+        {/* <div className='overflow-hidden rounded p-0 bg-light'> */}
             <Card.Img variant='top' src={categories.pic}/>
-        </div>
+        {/* </div> */}
         <Card.Body className='text-center'>
             <Card.Title className={styles.font}>{categories.name}</Card.Title>
             <Card.Title  className={styles.font}>{categories.tittle}</Card.Title>
