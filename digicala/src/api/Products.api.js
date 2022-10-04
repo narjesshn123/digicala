@@ -3,11 +3,22 @@ export const getProducts = ()=>{
     return new Promise((resolve, reject)=>{
           axios.get("/api/users")
           .then((res)=>{resolve(res)})
+         
           .catch((e)=>{
             reject(e.response)
           })
     })
-}   
+} 
+export const getusers = ()=>{
+  return new Promise((resolve, reject)=>{
+        axios.get("/api/products")
+        .then((res)=>{resolve(res)})
+        .catch((e)=>{
+          reject(e.response)
+        })
+  })
+  
+}  
 
 // export const getProduct = (id)=>{
 //   return new Promise((resolve, reject)=>{

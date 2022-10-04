@@ -12,36 +12,44 @@ import { Navbar } from '../../components/Nav/Navbar';
 import Categories from '../../components/Category/Categories';
 import axios from 'axios';
 import { getProducts } from '../../api/Products.api';
+import { getusers } from '../../api/Products.api';
 import UncontrolledExample from '../../components/Carousel/Carousel'
 // import { useParams } from 'react-router-dom';
 export const Home = () => {
   // let {id} = useParams()
   const[users, setUsers]= useState([])
+  const[products, setProducts] = useState([])
   useEffect(()=>{
-    getProducts().then(res => setUsers(res.data.users)).catch(e=>alert(e.status))
-    // axios.get('/api/users')
-    // .then(res=>setUsers(res.data.users))
-    // .catch(e=>{console.log(e)})
-
-    //   fetch("/api/users")
-    //   .then(res=>res.json())
-    //   .then(data=>setUsers(data.users))
-    //   .then(data=>console.log(data.users))
+    getusers().then(res => setProducts(res.data.products))
+    .then(res => console.log(res.data.products))
+  
+    .catch(e=>alert(e.status))
+  },[])
+  useEffect(()=>{
+    getProducts().then(res => setUsers(res.data.users))
+  
+    .catch(e=>alert(e.status))
   },[])
   return (
  
             <div>
             {/* <div><Navbar/></div> */}
             <UncontrolledExample/>
-            <section><GroupCategory/></section>  
             <section>
-            <Categories users={users} id={users.id} />
+              <GroupCategory/>
+            </section> 
+            <section>
+              <CategoryAmazing products={products} />
+            </section> 
+            <section>
+              <Categories users={users} id={users.id} />
             </section>
+            
             {/* <section><ProposalProduct/></section>  */}
 {/*          
             <section><CategoryOtherItem/></section>
           
-            <section><CategoryAmazing/></section>
+          
            
             
 

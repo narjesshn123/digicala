@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styles from './Category.style.module.css'
+import styles from '../Category/Category.style.module.css'
 import {Card, Button, CardImg} from 'react-bootstrap'
 
-const CategoryItem = ({categories, id, pic}) => {
+const AmazingItem = ({products}) => {
 
 
   return (
@@ -11,16 +11,16 @@ const CategoryItem = ({categories, id, pic}) => {
 <div > 
   
        <Card className='p-0 overflow-hidden h-100 shadow'>
-       <Link to={"/users/" +id} pic={pic}>
+       {/* <Link to={"/users/" +id} pic={pic}> */}
         <div className='overflow-hidden rounded p-0 bg-light'>
-            <Card.Img variant='top' src={categories.pic}/>
+            <Card.Img variant='top' src={products.pic}/>
         </div>
         <Card.Body className='text-center'>
-            <Card.Title className={styles.font}>{categories.name}</Card.Title>
-            <Card.Title  className={styles.font}>{categories.tittle}</Card.Title>
+            <Card.Title className={styles.font}>{products.name}</Card.Title>
+            <Card.Title  className={styles.font}>{products.tittle}</Card.Title>
         </Card.Body>
         {/* <Button className='w-100 rounded-0' variant='success'>show now</Button> */}
-        </Link>
+        {/* </Link> */}
         </Card> 
     </div>
 
@@ -28,7 +28,7 @@ const CategoryItem = ({categories, id, pic}) => {
   )
 }
 
-export default CategoryItem
+export default AmazingItem
 
 
 

@@ -11,18 +11,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {FreeMode} from 'swiper'
 import 'swiper/css'
 import 'swiper/css/free-mode'
-import { CategoryContoll } from './CategoryContoll'
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
 const Categories = ({users, id}) => {
-  // const {id} = useParams;
-  // alert(userId)
-
+ 
   return (
 
-<div className="container py-4 px-4 justify-content bg-light">
+<div className="container py-4 px-4 justify-content" style={{backgroundColor:"white"}}>
+<h2>Official brand stores in Grocery</h2>
 <Swiper navigation={true} modules={[Navigation]} className="mySwiper"
 freeMode={true}
 grabCursor={true}
@@ -50,7 +48,8 @@ breakpoints={{
     spaceBetween: 20
   },
 }}
->           
+>     
+     
 
       {users.map((categories) =>(
         <SwiperSlide>
@@ -60,7 +59,6 @@ breakpoints={{
       ))}
 
    
-
 
 </Swiper>
 </div>
