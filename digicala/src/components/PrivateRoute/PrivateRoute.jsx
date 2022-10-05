@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 
-const WithAuth = (WrappedComponent, isLogin) => {
+ const Withauth = (WrappedComponent, isLogin) => {
  if(isLogin){
     return (props)=> <WrappedComponent    {...props}/>
  }
@@ -10,4 +10,4 @@ const WithAuth = (WrappedComponent, isLogin) => {
  }
 }
 
-export default WithAuth
+export default Withauth

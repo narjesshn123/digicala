@@ -85,12 +85,7 @@ count + item.count, 0))
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
-            navbarScroll>
-            <Navbar.Brand>  
-            <Link to={"/profile"}>
-          <span>profile</span>
-          </Link>
-            </Navbar.Brand>
+            navbarScroll>             
 
             <Navbar.Brand onClick={()=>Auth.logout()} style={{cursor:"pointer"}} >log out
             </Navbar.Brand>

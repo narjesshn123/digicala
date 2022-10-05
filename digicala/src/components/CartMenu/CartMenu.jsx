@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useMemo } from 'react'
 import { addtoCart, remove, decrease } from '../../redux/reducers/Cart.reducer'
-
 export const CartMenu = ({show, setShow}) => {
 const items = useSelector(state=>state.cart.items) ?? []
 const dispatch = useDispatch()
