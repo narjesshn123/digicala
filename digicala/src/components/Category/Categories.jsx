@@ -6,7 +6,9 @@ import  styles from './Category.style.module.css'
 import CategoryItem from './CategoryItem'
 // import {useParams} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-
+// import { Link } from 'react-router-dom'
+// import styles from './Category.style.module.css'
+import {Card, Button, CardImg} from 'react-bootstrap'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {FreeMode} from 'swiper'
 import 'swiper/css'
@@ -15,7 +17,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
-const Categories = ({users, id}) => {
+const Categories = ({users, id, filter, pic,  setFilter}) => {
  
   return (
 
@@ -23,9 +25,7 @@ const Categories = ({users, id}) => {
 <h2>Official brand stores in Grocery</h2>
 <Swiper navigation={true} modules={[Navigation]} className="mySwiper"
 freeMode={true}
-grabCursor={true}
-// modules={[FreeMode]}
-// className="mySwiper"
+grabCursor={true}              
 breakpoints={{
   0: {
     slidesPerView: 1,
@@ -50,13 +50,15 @@ breakpoints={{
 }}
 >     
      
-
-      {users.map((categories) =>(
-        <SwiperSlide>
-          <CategoryItem categories={categories} id={categories.id} />
+{users.filter((categories)=>categories.name.toLowerCase().includes(filter.toLowerCase())).length===0 ?
+        <p>ioioi</p> :           
+        users.filter(categories=>categories.name.toLowerCase().includes(filter.toLowerCase())).map(categories=>(
      
+        <SwiperSlide>
+          <CategoryItem name={categories.name} users={users} categories={categories} id={categories.id} />
+         
           </SwiperSlide>
-      ))}
+        ))}
 
    
 

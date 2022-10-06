@@ -15,10 +15,11 @@ import { getProducts } from '../../api/Products.api';
 import { getusers } from '../../api/Products.api';
 import UncontrolledExample from '../../components/Carousel/Carousel'
 // import { useParams } from 'react-router-dom';
-export const Home = () => {
+export const Home = ({filter, setFilter}) => {
   // let {id} = useParams()
   const[users, setUsers]= useState([])
   const[products, setProducts] = useState([])
+ 
   useEffect(()=>{
     getusers().then(res => setProducts(res.data.products))
     .then(res => console.log(res.data.products))
@@ -39,10 +40,10 @@ export const Home = () => {
               <GroupCategory/>
             </section> 
             <section>
-              <CategoryAmazing products={products} id={products.id} />
+              <CategoryAmazing filter={filter} setFilter={setFilter} products={products} id={products.id} />
             </section> 
             <section style={{marginTop:"5rem"}}>
-              <Categories users={users} id={users.id} />
+              <Categories filter={filter} setFilter={setFilter} users={users} id={users.id} />
             </section>
             
             {/* <section><ProposalProduct/></section>  */}

@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './Header.style.module.css'
 import logo from '../../assets/image/logo.svg';
 import takhfif from '../../assets/image/takhfif.gif'
 import basket from '../../assets/image/basket.png'
@@ -66,7 +65,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function Header() {
+function Header({filter, setFilter}) {
   const[show, setShow] = useState()
   const total_count = useSelector((state) => state.cart.items.reduce((count, item)=>
 count + item.count, 0))
@@ -106,12 +105,13 @@ count + item.count, 0))
               Link
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          <Form onSubmit={e=>e.preventDefault()} className="d-flex">
             <Form.Control style={{width:'100%'}}
               type="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              onChange={e=>setFilter(e.target.value)}
             />
             <Button variant="outline-success">Search</Button>
           </Form>

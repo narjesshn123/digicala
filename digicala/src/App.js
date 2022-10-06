@@ -2,7 +2,7 @@
 import React from 'react';
 import './App.css';
 import FormDisabledExample from './views/Login/Login.jsx';
-
+import { useState } from 'react';
 import { Login } from './views/Login/Login.jsx';
 // import MainLayout from './Layouts/MainLayout/MainLayout';
 import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';                      
@@ -19,7 +19,7 @@ const ProductSingle = React.lazy(()=> import('./components/ProductSingle/Product
 
 
 function App() {
-  
+  const[filter, setFilter] = useState('')
   return (
     <div className="App">
       <BrowserRouter>
@@ -28,10 +28,10 @@ function App() {
            
 
         <Route path='/' element={<React.Suspense fallback={<>loading...</>}>
-        <MainLayout/>
+        <MainLayout filter={filter} setFilter={setFilter}/>
         </React.Suspense>
         }>
-          <Route index element={<Home/>}/>
+          <Route index element={<Home filter={filter} setFilter={setFilter}/>}/>
           <Route path="profile" element={<Profile/>}/> 
           <Route path='users/:id' element={<React.Suspense fallback={<>loading loading loading</>}>
           <ProductSingle />
