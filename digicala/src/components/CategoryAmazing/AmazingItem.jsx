@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from '../Category/Category.style.module.css'
 import {Card, Button, CardImg} from 'react-bootstrap'
 
-const AmazingItem = ({product, pic, id}) => {
+const AmazingItem = ({product, pic, id, name}) => {
 
 
   return (
@@ -16,7 +16,7 @@ const AmazingItem = ({product, pic, id}) => {
             <Card.Img variant='top' src={product.pic}/>
         </div>
         <Card.Body className='text-center'>
-            <Card.Title className={styles.font}>{product.name}</Card.Title>
+            <Card.Title className={styles.font}>{name}</Card.Title>
             <Card.Title  className={styles.font}>{product.tittle}</Card.Title>
         </Card.Body>
         {/* <Button className='w-100 rounded-0' variant='success'>show now</Button> */}

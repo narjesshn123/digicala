@@ -1,5 +1,3 @@
-
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {FreeMode} from 'swiper'
 import 'swiper/css'
@@ -8,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import AmazingItem from './AmazingItem'
-export const CategoryAmazing = ({products, id}) => {
+export const CategoryAmazing = ({products, id, filter, setFilter}) => {
  
   return (
 
@@ -45,9 +43,13 @@ breakpoints={{
 >     
      
 
-      {products.map((product) =>(
+          
+{products.filter((product)=>product.name.toLowerCase().includes(filter.toLowerCase())).length===0 ?
+        <p></p> :           
+        products.filter(product=>product.name.toLowerCase().includes(filter.toLowerCase())).map(product=>(
+     
         <SwiperSlide>
-          <AmazingItem product={product} id={product.id} />
+          <AmazingItem  name={product.name} product={product} id={product.id} />
      
           </SwiperSlide>
       ))}
