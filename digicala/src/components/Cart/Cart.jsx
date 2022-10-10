@@ -4,12 +4,12 @@ import { addtoCart, remove, decrease } from '../../redux/reducers/Cart.reducer'
 import styles from './Cart.style.module.css'
 import { BiMinus, BiPlus, BiTrash } from 'react-icons/bi'
 import Auth from '../../api/localStorage'
-// import Withauth from '../PrivateRoute/PrivateRoute'
+import Withauth from '../PrivateRoute/PrivateRoute'
 import { useState } from 'react'
 import { useEffect } from 'react'
 // import { useNavigate } from "react-router-dom"; 
 
-// const isLogin = Auth.checklogin()
+const isLogin = Auth.checklogin()
 const Cart = () => {
   // const[log, setLog] = useState(isLogin)
   // let navigate = useNavigate();
@@ -112,4 +112,4 @@ const dispatch = useDispatch()
   )
 }
 
-export default Cart
+export default Withauth(Cart, isLogin)

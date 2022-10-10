@@ -4,7 +4,7 @@ import React from 'react'
 export const Footer = () => {
   return (
   
-    <div className=" my-5">
+    <div className=" my-5" style={{marginBottom : 0}}>
   
       <footer
               className="text-center text-lg-start text-dark"
