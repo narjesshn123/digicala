@@ -4,9 +4,15 @@ import { addtoCart, remove, decrease } from '../../redux/reducers/Cart.reducer'
 import styles from './Cart.style.module.css'
 import { BiMinus, BiPlus, BiTrash } from 'react-icons/bi'
 import Auth from '../../api/localStorage'
-import Withauth from '../PrivateRoute/PrivateRoute'
-const isLogin = Auth.checklogin()
+// import Withauth from '../PrivateRoute/PrivateRoute'
+import { useState } from 'react'
+import { useEffect } from 'react'
+// import { useNavigate } from "react-router-dom"; 
+
+// const isLogin = Auth.checklogin()
 const Cart = () => {
+  // const[log, setLog] = useState(isLogin)
+  // let navigate = useNavigate();
   const items = useSelector(state => state.cart.items)
   const total_price = useSelector((state)=>state.cart.items.reduce
 ((price, item) => price + (item.price*item.count),0)) 
@@ -14,6 +20,7 @@ const Cart = () => {
 const total_count = useSelector((state) => state.cart.items.reduce((count, item)=>
 count + item.count, 0))
 const dispatch = useDispatch()
+
   return (
          
          <section className="py-5">
@@ -55,7 +62,7 @@ const dispatch = useDispatch()
                                 </div>
                             </div>
                             </th>
-                            <td className="border-0 align-middle"><strong>{item.price}</strong></td>
+                            <td className="border-0 align-middle"><strong>{item.price * item.count}</strong></td>
                             <td className="border-0 align-middle"><strong>{item.count}</strong></td>
                             <td className="border-0 align-middle">
                               {/* <a className="text-dark"> */}
@@ -105,4 +112,4 @@ const dispatch = useDispatch()
   )
 }
 
-export default Withauth(Cart, isLogin)
+export default Cart

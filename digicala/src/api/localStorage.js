@@ -14,7 +14,8 @@ const Auth = {
       localStorage.removeItem("refreshToken");
       localStorage.removeItem("isLogin");
     },
-    checklogin: () => JSON.parse(localStorage.getItem("isLogin")),
+   checklogin: () => JSON.parse(localStorage.getItem("isLogin")),
+  
   };
   
   export default Auth;
