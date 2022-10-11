@@ -76,13 +76,17 @@ count + item.count, 0))
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
+        <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
-            navbarScroll>             
-
-          
+            navbarScroll
+          >
+            <Nav.Link>Home</Nav.Link>
+            <Nav.Link>login</Nav.Link>
             
+            <Nav.Link disabled>
+              logout
+            </Nav.Link>
           </Nav>
           <Form onSubmit={e=>e.preventDefault()} className="d-flex">
             <Form.Control style={{width:'100%'}}

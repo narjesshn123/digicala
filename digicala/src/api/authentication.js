@@ -38,15 +38,15 @@
 
 import axios from "axios";
 // import { Navigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-export const login = (data, navigate) => {
-  // const navigate = useNavigate();
+
+export const login = (data) => {
+
   return new Promise((resolve, reject) => {
     axios
       .post("/api/auth/login", data)
       .then((res) => {
         resolve(res.data);
-      navigate('/cart')
+     
       })
       .catch((e) => {
         reject(e.response);
