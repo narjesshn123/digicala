@@ -4,7 +4,7 @@ import { BiBasket, BiSearch } from 'react-icons/bi';
 import { CartMenu } from '../CartMenu/CartMenu';
 import { useState } from 'react';
  import { useSelector } from 'react-redux';              
-// import Auth from '../../api/localStorage';
+import Auth from '../../api/localStorage';
 // import { Link } from 'react-router-dom';
 // export const Header = () => {
 //   const[show, setShow] = useState()
@@ -60,7 +60,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function Header({filter, setFilter}) {
+function Header({filter, setFilter, isLoggedin, setIsLoggedin}) {
+  
   const[show, setShow] = useState()
   const total_count = useSelector((state) => state.cart.items.reduce((count, item)=>
 count + item.count, 0))
@@ -84,7 +85,9 @@ count + item.count, 0))
             <Nav.Link>Home</Nav.Link>
             <Nav.Link>login</Nav.Link>
             
-            <Nav.Link disabled>
+            <Nav.Link onClick={()=>{Auth.logout(false)
+          setIsLoggedin(false);
+            }} style={{cursor: "pointer"}}>
               logout
             </Nav.Link>
           </Nav>

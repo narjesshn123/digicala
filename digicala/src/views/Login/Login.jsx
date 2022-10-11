@@ -16,9 +16,12 @@ import lock5 from '../../assets/image/lock5.jpg'
 import login5 from '../../assets/image/login5.jpg'
 import styles from './Login.styles.module.css' 
 import { useNavigate } from "react-router-dom";                   
+import { useEffect } from "react";
 // export default Login;
 
-function Login() {
+function Login({isLoggedin, setIsLoggedin}) {
+
+
   let navigate = useNavigate();
   const [state, setState] = useState({
     username: "",
@@ -32,6 +35,7 @@ function Login() {
     login(state).then((data) => {
       console.log(data);
       Auth.login(data.accessToken , data.refreshToken);
+     
       alert('success')
      
         navigate("/")
@@ -45,17 +49,20 @@ function Login() {
     
     
   };
+  // useEffect(()=>{
+  //   if (Auth.checklogin()){
+  //     return(
+  //       navigate("/")
+  //     )
+  //   }
+  // },[])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((old) => ({ ...old, [name]: value }));
     
   };
-  // if (Auth.checklogin()){
-  //   return(
-  //     navigate("/")
-  //   )
-  // }
+
   
   return (
     <>

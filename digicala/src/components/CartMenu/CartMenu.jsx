@@ -19,6 +19,7 @@ count + item.count, 0))
   return (
     <div onMouseLeave={()=>setShow(false)} style={{display : show ? "block" : "none"}} className={styles.cartMenu}>
       <div className={styles.cartNav}>
+        
         <Link className={styles.link} to={'./cart'} 
         onClick={()=>setShow(false)}>
            مشاهده سبد خرید 

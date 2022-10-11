@@ -37,16 +37,15 @@
 
 
 import axios from "axios";
-// import { Navigate } from "react-router-dom";
 
 export const login = (data) => {
+
 
   return new Promise((resolve, reject) => {
     axios
       .post("/api/auth/login", data)
       .then((res) => {
         resolve(res.data);
-     
       })
       .catch((e) => {
         reject(e.response);

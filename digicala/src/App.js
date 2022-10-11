@@ -1,9 +1,9 @@
 // import "bootstrap/dist/css/bootstrap.min.css"
 import React from 'react';
 import './App.css';
-import FormDisabledExample from './views/Login/Login.jsx';
+import Login from './views/Login/Login.jsx';
 import { useState } from 'react';
-import { Login } from './views/Login/Login.jsx';
+// import { Login } from './views/Login/Login.jsx';
 // import MainLayout from './Layouts/MainLayout/MainLayout';
 import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';                      
 import { Home } from './views/Home/Home';          
@@ -20,15 +20,17 @@ const ProductSingle = React.lazy(()=> import('./components/ProductSingle/Product
 
 function App() {
   const[filter, setFilter] = useState('')
+  const [isLoggedin, setIsLoggedin] = useState(false);
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
-      <Route path="login" element={ <FormDisabledExample/> }/>      
+      <Route path="login" element={ <Login isLoggedin={isLoggedin}/> }/>      
            
 
         <Route path='/' element={<React.Suspense fallback={<>loading...</>}>
-        <MainLayout filter={filter} setFilter={setFilter}/>
+        <MainLayout filter={filter} setFilter={setFilter}
+        isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
         </React.Suspense>
         }>
           <Route index element={<Home filter={filter} setFilter={setFilter}/>}/>
@@ -39,7 +41,7 @@ function App() {
           <Route path='products/:id' element={<React.Suspense fallback={<>loading loading loading</>}>
             <AmazingSingle/>
             </React.Suspense>}/>
-        <Route path='/cart' element={<Cart/>}/> 
+          <Route path='/cart' element={<Cart isLoggedin={isLoggedin}/>}/> 
         </Route>
       </Routes>
       </BrowserRouter>

@@ -1,17 +1,16 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 import Auth from '../../api/localStorage';
-// import { useNavigate } from "react-router-dom";                   
-// const isLogin = Auth.checklogin()
- const Withauth = (WrappedComponent, isLogin) => {
-    // const navigate = useNavigate();  
-//   let navigate = useNavigate();
 
- if(isLogin){
+ const Withauth = (WrappedComponent) => {
+   
+
+ if(Auth.checklogin()){
     
-    return (props)=> <WrappedComponent    {...props}/>
+    return (props)=> <WrappedComponent    {...props}
+    />
  }
- else  {
+ else {
      return (props)=> <Navigate to={'/login'} {...props} />
  }
  

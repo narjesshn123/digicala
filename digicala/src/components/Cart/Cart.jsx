@@ -11,6 +11,7 @@ import { useEffect } from 'react'
 
 const isLogin = Auth.checklogin()
 const Cart = () => {
+  const [isLoggedin, setIsLoggedin] = useState(false);
   // const[log, setLog] = useState(isLogin)
   // let navigate = useNavigate();
   const items = useSelector(state => state.cart.items)
@@ -22,7 +23,7 @@ count + item.count, 0))
 const dispatch = useDispatch()
 
   return (
-         
+    
          <section className="py-5">
                 <div className="container px-4 px-lg-5 my-5">
                 <div className="row">
