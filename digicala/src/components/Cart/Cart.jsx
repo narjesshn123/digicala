@@ -9,7 +9,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 // import { useNavigate } from "react-router-dom"; 
 
-const isLogin = Auth.checklogin()
+// const isLogin = Auth.checklogin()
 const Cart = () => {
   const [isLoggedin, setIsLoggedin] = useState(false);
   // const[log, setLog] = useState(isLogin)
@@ -113,4 +113,4 @@ const dispatch = useDispatch()
   )
 }
 
-export default Withauth(Cart, isLogin)
+export default Cart

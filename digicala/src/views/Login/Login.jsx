@@ -37,8 +37,8 @@ function Login({isLoggedin, setIsLoggedin}) {
       Auth.login(data.accessToken , data.refreshToken);
      
       alert('success')
-     
-        navigate("/")
+     window.location = '/'
+        // navigate("/")
         
       
     }).catch(res => {

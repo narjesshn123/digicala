@@ -7,6 +7,9 @@ import {Link} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useMemo } from 'react'
 import { addtoCart, remove, decrease } from '../../redux/reducers/Cart.reducer'
+import { useState } from 'react'
+import Auth from '../../api/localStorage'
+import { refreshAccessToken } from '../../api/authentication'
 export const CartMenu = ({show, setShow}) => {
 const items = useSelector(state=>state.cart.items) ?? []
 const dispatch = useDispatch()
@@ -16,14 +19,21 @@ const total_price = useSelector((state)=>state.cart.items.reduce
 
 const total_count = useSelector((state) => state.cart.items.reduce((count, item)=>
 count + item.count, 0))
+
+const [state, setState] = useState({
+  username: "",
+  password: "",
+});
+
   return (
     <div onMouseLeave={()=>setShow(false)} style={{display : show ? "block" : "none"}} className={styles.cartMenu}>
       <div className={styles.cartNav}>
-        
-        <Link className={styles.link} to={'./cart'} 
+        {(Auth.checklogin()) ?<Link className={styles.link} to={'./cart'} 
         onClick={()=>setShow(false)}>
            مشاهده سبد خرید 
-           </Link>
+           </Link> : 
+        <p>login</p>
+           }
         <p>کالا {total_count}</p>
       </div>
       <ul>
