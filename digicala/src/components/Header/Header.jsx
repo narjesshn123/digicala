@@ -85,8 +85,8 @@ count + item.count, 0))
             <Nav.Link>Home</Nav.Link>
             <Nav.Link>login</Nav.Link>
             
-            <Nav.Link onClick={()=>{Auth.logout(false)
-          setIsLoggedin(false);
+            <Nav.Link onClick={()=>{Auth.logout(true)
+          // setIsLoggedin(false);
             }} style={{cursor: "pointer"}}>
               logout
             </Nav.Link>
