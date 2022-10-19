@@ -26,7 +26,7 @@ function App() {
       <BrowserRouter>
       <Routes>
       <Route path="login" element={ <Login isLoggedin={isLoggedin}/> }/>      
-           
+      <Route path='/cart' element={<Cart isLoggedin={isLoggedin}/>}/> 
 
         <Route path='/' element={<React.Suspense fallback={<>loading...</>}>
         <MainLayout filter={filter} setFilter={setFilter}
@@ -41,7 +41,7 @@ function App() {
           <Route path='products/:id' element={<React.Suspense fallback={<>loading loading loading</>}>
             <AmazingSingle/>
             </React.Suspense>}/>
-          <Route path='/cart' element={<Cart isLoggedin={isLoggedin}/>}/> 
+          
         </Route>
       </Routes>
       </BrowserRouter>

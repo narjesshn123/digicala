@@ -3,6 +3,8 @@ import React from 'react'
 import { BiBasket, BiSearch } from 'react-icons/bi';
 import { CartMenu } from '../CartMenu/CartMenu';
 import { useState } from 'react';
+import {Link} from 'react-router-dom'
+
  import { useSelector } from 'react-redux';              
 import Auth from '../../api/localStorage';
 // import { Link } from 'react-router-dom';
@@ -82,9 +84,7 @@ count + item.count, 0))
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link>Home</Nav.Link>
-            <Nav.Link>login</Nav.Link>
-            
+          
             <Nav.Link onClick={()=>{Auth.logout(true)
           // setIsLoggedin(false);
             }} style={{cursor: "pointer"}}>

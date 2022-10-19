@@ -1,6 +1,8 @@
 import WithSpinner from '../WithSpinner/WithSpinner'
 import styles from '../../views/AmazingSingle/AmazingSingle.style.module.css'
 import { useDispatch } from 'react-redux'
+import Auth from '../../api/localStorage'
+import { Link } from 'react-router-dom'
 import { addtoCart } from '../../redux/reducers/Cart.reducer'
 import { getProduct } from '../../api/Products.api'
 const ProductSingle = ({user}) => {
@@ -29,7 +31,17 @@ const ProductSingle = ({user}) => {
           src={product.pic} 
           alt=""/>       
         </div> */}
-        <button onClick={(()=>handleAddtoCart(user))}  className={styles.cart}>Add to cart</button>
+
+{(Auth.checklogin()) ?
+       
+       <button onClick={(()=>handleAddtoCart(user))} 
+     className={styles.cart}>Add to cart</button>
+       : 
+       <Link to={'/login'}>
+      <button className={styles.cart}>Add to cart</button>
+       </Link>
+    
+}             
         </div>   
       </div>
       

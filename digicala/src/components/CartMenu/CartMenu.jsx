@@ -1,9 +1,10 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+
 import styles from './CartMenu.style.module.css'
 import cini from '../../assets/image/cini.jpg'
 import CartMenuItem from '../CartMenuItem/CartMenuItem'
 import { BiTrash, BiPlus, BiMinus } from 'react-icons/bi'
-import {Link} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useMemo } from 'react'
 import { addtoCart, remove, decrease } from '../../redux/reducers/Cart.reducer'
@@ -28,12 +29,12 @@ const [state, setState] = useState({
   return (
     <div onMouseLeave={()=>setShow(false)} style={{display : show ? "block" : "none"}} className={styles.cartMenu}>
       <div className={styles.cartNav}>
-        {(Auth.checklogin()) ?<Link className={styles.link} to={'./cart'} 
+       
+        <Link className={styles.link} to={'./cart'} 
         onClick={()=>setShow(false)}>
            مشاهده سبد خرید 
-           </Link> : 
-        <p>login</p>
-           }
+           </Link> 
+         
         <p>کالا {total_count}</p>
       </div>
       <ul>

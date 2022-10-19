@@ -20,12 +20,14 @@ export const CartSlice = createSlice({
    //       }
    //    }, 
    addtoCart: (state, action) => {
-      const p = state.items.findIndex((item) => item.id === action.payload.id);
+      const p = state.items.findIndex((item) => item.id === action.payload.id);      
       if (p >= 0) {
-        state.items[p].count++;
+        state.items[p].count++
+       
       } else {
         state.items.push({ ...action.payload, count: 1 });
       }
+       
     },              
     decrease: (state, action)=>{
       const p = state.items.findIndex(item => item.id === action.payload.id)

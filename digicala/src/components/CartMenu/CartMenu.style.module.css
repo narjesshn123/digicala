@@ -4,6 +4,8 @@
     background-color: white;
     border-radius: 15px;          
     box-shadow: 0 4px 12px 0 rgb(0, 0, 0 / 20%);
+    overflow-y: scroll;
+    height: 50rem;
 }
 .cartNav{
     display: flex;
